@@ -12,12 +12,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // affirmation API
 const affirmationApiURL = "https://www.affirmations.dev/";
 
+const getAffirmResult = async () => {
+  const response = await axios.get(affirmationApiURL);
+  return response.data;
+};
+
 app.get("/", async (req, res) => {
   try {
-    const affirmResult = await axios.get(affirmationApiURL);
-
+    const affirmResult = await getAffirmResult();
     res.render("index.ejs", {
-      affirm: affirmResult.data.affirmation,
+      affirm: affirmResult.affirmation,
     });
   } catch (error) {
     console.log(error.response.data);
@@ -33,11 +37,11 @@ app.post("/submit", async (req, res) => {
 
   try {
     const weatherResult = await axios.get(weatherApiUrl);
-    const affirmResult = await axios.get(affirmationApiURL);
+    const affirmResult = await getAffirmResult();
 
     res.render("index.ejs", {
       currentWeather: weatherResult.data,
-      affirm: affirmResult.data.affirmation,
+      affirm: affirmResult.affirmation,
     });
   } catch (error) {
     console.log(error.response.data);
