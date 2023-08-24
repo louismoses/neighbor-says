@@ -2,13 +2,13 @@
 
 ### Tech Stack
 
-ts. EJS
-ts. NodeJS
-ts. ExpressJS
-ts. Axios
-ts. BodyParser
+- EJS
+- NodeJS
+- ExpressJS
+- Axios
+- BodyParser
 
 ### API's
 
-[Affirmation] (https://www.affirmations.dev/)
-[Weather] (https://www.weatherapi.com/)
+[Affirmation](https://www.affirmations.dev/)
+[Weather](https://www.weatherapi.com/)
