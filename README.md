@@ -10,5 +10,5 @@
 
 ### API's
 
-[Affirmation](https://www.affirmations.dev/)
-[Weather](https://www.weatherapi.com/)
+_[Affirmation](https://www.affirmations.dev/)
+_[Weather](https://www.weatherapi.com/)
