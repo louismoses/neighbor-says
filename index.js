@@ -1,31 +1,46 @@
 import express from "express";
 import axios from "axios";
+import bodyParser from "body-parser";
 import "dotenv/config";
 
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // affirmation API
 const affirmationApiURL = "https://www.affirmations.dev/";
 
-// weather API
-const weatherApiKey = process.env.WEATHER_API_KEY;
-const weatherApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=lucena`;
-
 app.get("/", async (req, res) => {
   try {
-    const result = await axios.get(affirmationApiURL);
-    const weather = await axios.get(weatherApiUrl);
+    const affirmResult = await axios.get(affirmationApiURL);
 
     res.render("index.ejs", {
-      affirm: result.data.affirmation,
-      currentWeather: weather.data,
+      affirm: affirmResult.data.affirmation,
     });
   } catch (error) {
     console.log(error.response.data);
     res.status(500);
+  }
+});
+
+app.post("/submit", async (req, res) => {
+  // weather API
+  const weatherApiKey = process.env.WEATHER_API_KEY;
+  const currentCity = req.body["cityWeather"];
+  const weatherApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${currentCity}`;
+
+  try {
+    const weatherResult = await axios.get(weatherApiUrl);
+    const affirmResult = await axios.get(affirmationApiURL);
+
+    res.render("index.ejs", {
+      currentWeather: weatherResult.data,
+      affirm: affirmResult.data.affirmation,
+    });
+  } catch (error) {
+    console.log(error.response.data);
   }
 });
 
