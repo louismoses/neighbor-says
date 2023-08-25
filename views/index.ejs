@@ -10,14 +10,36 @@
 </head>
 <body>
     <main>
-    <section class="weather-container">
-        <div class="weather-content">
-            <% if(locals.currentWeather){ %>
-                <h2> <%= currentWeather.current.condition.text %></h2>
-            <% } %>
-        </div>
+    <section class="weather-container">  
+         <% if(locals.currentWeather){ %>
+            <div class="flex">
+                <div class="weather-content">
+                    <div class="flex items-center">
+                        <div>
+                            <img src="<%= currentWeather.current.condition.icon %>" alt="Weather Condition">
+                        </div>
+                        <div class="text-left">
+                            <h2 class="text-3xl"> <%= currentWeather.location.name %></h2>
+                            <p><%= currentWeather.location.country %> <%= currentWeather.location.localtime %></p>
+                        <h2 class="text-2xl"> <%= currentWeather.current.condition.text %></h2>
+                        </div>
+                    </div>  
+                </div>
+                <div class="weather-content text-left">
+                    <p>UV Index : <span><%= currentWeather.current.uv %></span></p>
+                    <p>Wind Status : <span><%= currentWeather.current.wind_kph %> Kph</span></p>
+                    <p>Wind Direction : <span><%= currentWeather.current.wind_dir %></span></p>
+                    <p>Sunrise : <span><%= currentWeather.forecast.forecastday[0].astro.sunrise %></span></p>
+                    <p>Sunset : <span><%= currentWeather.forecast.forecastday[0].astro.sunset %></span></p>
+
+                </div>
+                <div class="weather-content flex items-center">
+                    <h3 class="text-4xl"><%= currentWeather.current.temp_c %> C<sup>o</sup></h3>                
+                </div>
+            </div>
+        <% } %>
         <form action="/submit" method="POST" class="flex flex-col gap-y-2">
-            <h1 class="text-4xl">Weather Forcast in Your City</h1>
+            <h2 class="text-4xl">Weather Forcast in Your City</h2>
             <label for="weatherQuestion">Kindly provide your city's name</label>
             <input type="text" name="cityWeather" placeholder="City Name" class="box-input">
             <input type="submit" value="submit" class="rounded-full  bg-red-400 box-content submit-btn">
@@ -25,7 +47,7 @@
     </section>
     <section class="affirm-container">
         <div class="flex flex-col-reverse items-center ">
-            <span><i class="fa fa-android fa-4x"></i></span>
+            <span><i class="fa fa-android fa-3x"></i></span>
             <div>
               <strong><%= affirm %></strong>
             </div>

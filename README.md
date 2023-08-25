@@ -1,6 +1,6 @@
-# Neighbor Says!
+# Weather Affirmation
 
-A simple weather app with some affirmation.
+A simple weather web app with some affirmation.
 
 ### Installation
 

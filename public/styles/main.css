@@ -39,3 +39,10 @@ section.affirm-container {
   padding: 8px 40px;
   text-transform: uppercase;
 }
+
+.weather-content {
+  border-radius: 16px;
+  border: solid 1px;
+  margin: 10px 8px 36px;
+  padding: 16px;
+}
