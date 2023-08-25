@@ -22,3 +22,13 @@ A simple weather web app with some affirmation.
 
 - [Affirmation](https://www.affirmations.dev/)
 - [Weather](https://www.weatherapi.com/)
+
+### Screenshots
+
+![image](https://github.com/louismoses/weather-affirmation/assets/51215698/644e51e7-54f7-4990-95fc-4ce7ebb01853)
+
+![image](https://github.com/louismoses/weather-affirmation/assets/51215698/fcd31405-5e21-40cb-8207-902c8c822301)
+
+![image](https://github.com/louismoses/weather-affirmation/assets/51215698/c4c40455-297d-4b88-bfa5-ae5ee8a61f6a)
+
+![image](https://github.com/louismoses/weather-affirmation/assets/51215698/d9fd59f3-b31d-445e-832e-432dfecc2e50)

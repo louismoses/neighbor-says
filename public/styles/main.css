@@ -15,7 +15,8 @@ main {
   );
   color: white;
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 32px 8px;
   place-content: center;
   text-align: center;
 }
@@ -43,6 +44,6 @@ section.affirm-container {
 .weather-content {
   border-radius: 16px;
   border: solid 1px;
-  margin: 10px 8px 36px;
+  margin: 16px;
   padding: 16px;
 }
