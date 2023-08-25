@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neighbor Says!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/main.css">
+    <title>Weather Affirmation</title>
 </head>
 <body>
-    <h1> <%= affirm %></h1>
-    <% if(locals.currentWeather){ %>
-        <h2> <%= currentWeather.current.condition.text %></h2>
-        <% } %>
-    <form action="/submit" method="POST">
-        <label for="weatherQuestion">Dude whats the weather today</label>
-        <input type="text" name="cityWeather" placeholder="City Name">
-        <input type="submit" value="submit">
-    </form>
+    <main>
+    <section class="weather-container">
+        <div class="weather-content">
+            <% if(locals.currentWeather){ %>
+                <h2> <%= currentWeather.current.condition.text %></h2>
+            <% } %>
+        </div>
+        <form action="/submit" method="POST" class="flex flex-col gap-y-2">
+            <h1 class="text-4xl">Weather Forcast in Your City</h1>
+            <label for="weatherQuestion">Kindly provide your city's name</label>
+            <input type="text" name="cityWeather" placeholder="City Name" class="box-input">
+            <input type="submit" value="submit" class="rounded-full  bg-red-400 box-content submit-btn">
+        </form>
+    </section>
+    <section class="affirm-container">
+        <div class="flex flex-col-reverse items-center ">
+            <span><i class="fa fa-android fa-4x"></i></span>
+            <div>
+              <strong><%= affirm %></strong>
+            </div>
+          </div>
+    </section>
+    </main>
 </body>
 </html>
