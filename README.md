@@ -29,6 +29,4 @@ A simple weather web app with some affirmation.
 
 ![image](https://github.com/louismoses/weather-affirmation/assets/51215698/fcd31405-5e21-40cb-8207-902c8c822301)
 
-![image](https://github.com/louismoses/weather-affirmation/assets/51215698/c4c40455-297d-4b88-bfa5-ae5ee8a61f6a)
-
-![image](https://github.com/louismoses/weather-affirmation/assets/51215698/d9fd59f3-b31d-445e-832e-432dfecc2e50)
+![image](https://github.com/louismoses/weather-affirmation/assets/51215698/c4c40455-297d-4b88-bfa5-ae5ee8a61f6a) ![image](https://github.com/louismoses/weather-affirmation/assets/51215698/d9fd59f3-b31d-445e-832e-432dfecc2e50)
